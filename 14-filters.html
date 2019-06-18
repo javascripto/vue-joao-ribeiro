@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <input v-model="name" @keydown.enter="add">
+  <button @click="add">Add</button>
+  <hr>
+  <ul>
+    <li v-for="n in names">{{n | upper}}</li>
+  </ul>
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      name: '',
+      names: [],
+    },
+    methods: {
+      add() {
+        this.names.push(this.name);
+        this.name = '';
+        console.log(this.names);
+      }
+    },
+    filters: {
+      upper(value) {
+        return value.toUpperCase();
+      }
+    }
+  });
+</script>

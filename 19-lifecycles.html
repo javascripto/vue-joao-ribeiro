@@ -1,0 +1,36 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <button @click="changeName">Click</button>
+  <button @click="destroy">Destroy</button>
+  <span>{{name}}</span>
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      name: '',
+    },
+    methods: {
+      changeName() {
+        this.name = 'João';
+      },
+      destroy() {
+        this.$destroy();
+      }
+    },
+    created() {
+      console.log('Componente criado');
+    },
+    mounted() {
+      console.log('Componente montado');
+    },
+    updated() {
+      console.log('DOM Alterado');
+    },
+    destroyed() {
+      console.log('Componente destruido')
+    }
+  });
+</script>

@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <list :items="nomes" />
+</div>
+
+<script>
+  Vue.component('list', {
+    props: ['items'],
+    template: `
+      <ul>
+        <li v-for="item of items">{{item}}</li>
+      </ul>
+    `,
+  });
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      nomes: [ 'João', 'Ana', 'Tiago', 'Roberto'],
+    }
+  });
+</script>

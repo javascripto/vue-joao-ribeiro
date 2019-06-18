@@ -1,0 +1,37 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <h1>Diretivas</h1>
+
+  <h3>v-model</h3>
+  <input v-model="text">
+  <span>{{ text }}</span>
+  
+  <h3>v-if & v-else</h3>
+  <button @click="toggle()">Alternar parágrafo</button>
+  <p v-if="showParagraph">Este elemento é exibido de acordo com a diretiva v-if</p>
+  <p v-else>Este outro aparece no caso de v-else. (v-else depende de um v-if anteriormente)</p>
+  <p v-if="!showParagraph">v-if com operador not (!)</p>
+
+  <h3>v-for</h3>
+  <ul>
+    <li v-for="value, key of items">
+      Item {{ value }} / indice {{ key }}
+    </li>
+  </ul>
+
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      showParagraph: true,
+      text: 'Altere o texto',
+      items: [1, 2, 3, 4],
+      toggle() {
+        this.showParagraph = ! this.showParagraph;
+      }
+    }
+  });
+</script>

@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <p v-once>{{nome}}</p>
+  <p v-text="nome"></p>
+  <p v-pre>{{nome}}</p> <!-- Não interpreta código dentro dessa tag -->
+  <button @click="action">Click</button>
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      nome: 'João'
+    },
+    methods: {
+      action() {
+        this.nome = 'Antônio'
+      }
+    }
+  });
+</script>

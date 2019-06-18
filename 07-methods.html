@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <div v-if="visivel">
+    <h3>Div 1</h3>
+  </div>
+  <div v-else>
+    <h3>Div 2</h3>
+  </div>
+  <button @click="toggle1()">Toggle</button> <!-- Primeira forma -->
+  <button v-on:click="toggle2">Toggle</button> <!-- Segunda forma -->
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      visivel: true,
+      toggle1() {
+        this.visivel = !this.visivel;
+      },
+    },
+    methods: {
+      toggle2() {
+        this.visivel = !this.visivel;
+      }
+    }
+  });
+</script>

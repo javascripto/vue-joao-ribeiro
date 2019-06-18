@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <span v-text="valor"></span> <!-- innerText -->
+  <span v-html="valor"></span> <!-- innerHTML -->
+
+  <div>
+    <button @click="t1">Título 1</button>
+    <button @click="t2">Título 3</button>
+    <button @click="t3">Título 5</button>
+  </div>
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      valor: '<h1>Título Vue</h1>'
+    },
+    methods: {
+      t1() {
+        this.valor = '<h1>Título Vue</h1>'
+      },
+      t2() {
+        this.valor = '<h3>Título Vue</h3>'
+      },
+      t3() {
+        this.valor = '<h5>Título Vue</h5>'
+      }
+    }
+  });
+</script>

@@ -1,0 +1,34 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <input v-model="name">
+  <div>{{fullName}}</div>
+  <div>{{fullNameMethod()}}</div>
+  <div>{{fullNameComputedValue}}</div>
+</div>
+
+<!-- Computed Properties só são executadas quando existe de fato alguma alteração dos valores de uma de suas dependências - São como propriedades get -->
+
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      name: 'yuri',
+      lastname: 'almeida',
+      get fullName() {
+        return `${this.name} ${this.lastname}`
+      }
+    },
+    methods: {
+      fullNameMethod() {
+        return `${this.name} ${this.lastname}`
+      }
+    },
+    computed: {
+      fullNameComputedValue() {
+        return `${this.name} ${this.lastname}`
+      }
+    }
+  });
+</script>

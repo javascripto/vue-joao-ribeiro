@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <p>
+    Mostrar sempre
+    <button @click="toggle">Alternar</button>
+  </p>
+  <p v-if="condicao">(v-if) Mostrar condicionalmente</p>
+  <p v-show="condicao">(v-show) Mudar <mark>style="display: none"</mark> condicionalmente. elemento continua no DOM</p>
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      condicao: true
+    },
+    methods: {
+      toggle() {
+        this.condicao = !this.condicao;
+      }
+    }
+  });
+</script>

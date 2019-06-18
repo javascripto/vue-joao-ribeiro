@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <parent></parent>
+</div>
+
+<script>
+  Vue.component('parent', {
+    template: `
+      <div style="border: 1px solid black">
+        <p>Componente Pai</p>
+        <child></child>
+        <child></child>
+      </div>
+    `
+  });
+
+  Vue.component('child', {
+    template: `
+      <p style="border: 1px solid black">Componente Filho</p>
+    `
+  })
+
+  const app = new Vue({
+    el: '#app',
+    component: [
+      'parent',
+      'child',
+    ]
+  });
+</script>

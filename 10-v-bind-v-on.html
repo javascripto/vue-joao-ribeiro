@@ -1,0 +1,49 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<div id="app">
+  <div>
+    <h1>{{flag.description}}</h1>
+    <img v-bind:src="flag.img" width="200" height="140">
+    <img :src="flag.img" width="200" height="140">
+  </div>
+  <div>
+    <button v-on:click="brasil">Brasil</button>
+    <button v-on:click="portugal">Portugal</button>
+  </div>
+  <div>
+    <button @click="brasil">Brasil</button>
+    <button @click="portugal">Portugal</button>
+  </div>
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      flags: [
+        {
+          description: 'Bandeira do Brasil',
+          img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/2000px-Flag_of_Brazil.svg.png'
+        },
+        {
+          description: 'Bandeira de Portugal',
+          img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/2000px-Flag_of_Portugal.svg.png'
+        },
+      ],
+      flag: {}
+    },
+    methods: {
+      brasil() {
+        this.flag = this.flags[0];
+      },
+      portugal() {
+        this.flag = this.flags[1];
+      }
+    },
+    created() {
+      this.flag = this.flags[0];
+    }
+  });
+
+  app.brasil();
+</script>
