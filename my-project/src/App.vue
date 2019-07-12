@@ -12,6 +12,9 @@ import Novo from './components/Novo'
 import HelloWorld from './components/HelloWorld'
 import Componente1 from './components/Componente1'
 
+// Vue.components('component-1', Componente1);
+
+
 export default {
   name: 'app',
   components: {

@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <input type="text" v-model="nome">
+  <div class="container">
+    <input type="text" v-model="nome" class="form-control">
     <p>O valor inserido é: {{nome}}</p>
-    <button @click="limpar">limpar</button>
+    <button @click="limpar" class="btn btn-success">limpar</button>
   </div>
 </template>
 
