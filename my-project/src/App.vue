@@ -24,9 +24,9 @@ import ComponenteVermelho from './components/ComponenteVermelho';
 export default {
   name: 'app',
   components: {
-    Novo,
-    HelloWorld,
-    Componente1,
+    // Novo,
+    // HelloWorld,
+    // Componente1,
     ComponenteVerde,
     ComponenteVermelho,
   }
