@@ -14,7 +14,7 @@
         <div class="col-12 p-4">
           <p>Mecanismo para alterar o valor do nome.</p>
           <button class="btn btn-success" @click="changeName">Alterar nome</button>
-          <Detalhe :name="name" ref="detalhes"/>
+          <Detalhe :name="name" ref="detalhes" @changeName="changeName2($event)"/>
         </div>
       </div>
     </div>
@@ -54,6 +54,9 @@ export default {
     changeName() {
       this.name = 'Carlos'; // Alterando valor no componente filho por props
       this.$refs.detalhes.name2 = 'Carlos'; // Alterando vaor no componente filho diretamente por referencia
+    },
+    changeName2(event) {
+      this.name = this.$refs.detalhes.name2 = event;
     }
   }
 }
